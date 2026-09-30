@@ -411,7 +411,7 @@ Today, the digital landscape has undergone an irreversible phase transition. Hum
 - Asynchronous high-throughput log streams with mutating compiler stack traces.
 - Multi-dimensional contextual intents where word order inverts business logic (`"refund delivery"` vs `"delivery refund"`).
 
-Yet, look at modern programming languages—whether Go, Rust, C++, Java, or Python. **Their fundamental control flow primitive has not evolved a single millimeter since the 1970s.**
+Yet, look at modern programming languages—whether Java, Go, Rust, C++, or Python. **Their fundamental control flow primitive has not evolved a single millimeter since the 1970s.**
 
 Engineers are still desperately stringing together brittle `if` statements, bloating codebases with thousands of fragile regexes, and watching servers collapse under ReDoS backtracks and CPU saturation. When regex fails, the industry swings to the opposite extreme of absurdity: burning millions of dollars routing simple string branches to 400-billion-parameter cloud LLMs, waiting 2,000 milliseconds and paying $0.03 just to pick an execution branch.
 
@@ -422,7 +422,7 @@ Control flow must transcend discrete, byte-exact binary matching. It must evolve
 2. Control flow must natively understand semantic context, token permutation, and feature interactions in single-digit microseconds.
 3. Decision boundaries must be probabilistic and multi-tiered—safely executing confident branches, gracefully prompting when ambiguous, and deterministically isolating out-of-distribution noise without panic.
 
-**IntelliBranch is not just a tool; it is a working manifesto.** It proves that a self-contained, domain-trained neural routing engine running in pure Go can replace brittle retro branching at **~30 microseconds with strictly 0 B/op heap allocation**.
+**IntelliBranch is not just a tool; it is a working manifesto.** It proves that a self-contained, domain-trained neural routing engine running natively on the JVM can replace brittle retro branching in **tens of microseconds with near-zero GC pressure**.
 
 The future of programming languages lies in elevating the compiler and runtime to understand continuous semantic topology. The era of blind discrete branching is over.
 
