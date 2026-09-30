@@ -94,6 +94,29 @@ Incoming Request ("bruh can u refund order #49281")
 
 ---
 
+## 🚀 Instant Demo Execution (One-Click)
+
+Run the full enterprise suites immediately with zero configuration:
+
+```bash
+# 1. Run all 80 Enterprise Production Scenarios (Benchmark & Verification):
+.\run-examples.bat verify          # Windows PowerShell / CMD
+./run-examples.sh verify           # Linux / macOS
+
+# 2. Run 10-Domain Representative Showcase:
+.\run-examples.bat mega            # Windows
+./run-examples.sh mega             # Linux / macOS
+
+# 3. Run Specific Real-World Scenarios (e.g. Wire Fraud E25 or Prompt Injection E35):
+.\run-examples.bat mega E25
+.\run-examples.bat mega E35
+
+# 4. Run 6-Domain End-to-End Neural Training & Microsecond Throughput Suite:
+java -cp target/classes com.intellibranch.cli.DemoRunner --domain all
+```
+
+---
+
 ## Quickstart (5 Minutes)
 
 ### Prerequisites
