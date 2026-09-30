@@ -265,6 +265,36 @@ java -cp target/classes com.intellibranch.cli.DemoRunner --domain sre
 
 ---
 
+## Enterprise Production Examples Gallery
+
+IntelliBranch-JAVA includes 7 dedicated, production-ready enterprise reference implementations located in `com.intellibranch.examples`:
+
+```bash
+# Run all enterprise examples
+java -cp target/classes com.intellibranch.examples.ExampleGallery all
+
+# Or run specific targeted patterns:
+java -cp target/classes com.intellibranch.examples.ExampleGallery spring       # 1. Spring Boot Web Controller
+java -cp target/classes com.intellibranch.examples.ExampleGallery kafka        # 2. Kafka QoS Stream Partitioning
+java -cp target/classes com.intellibranch.examples.ExampleGallery llm          # 3. LLM Gateway & Cloud Bypass
+java -cp target/classes com.intellibranch.examples.ExampleGallery fintech      # 4. Wire Memo Scam Interception
+java -cp target/classes com.intellibranch.examples.ExampleGallery waf          # 5. WAF & API Security Inspector
+java -cp target/classes com.intellibranch.examples.ExampleGallery iot          # 6. Embedded IoT Zero-Alloc Actuator
+java -cp target/classes com.intellibranch.examples.ExampleGallery multitenant  # 7. Multi-Tenant Cascading Router
+```
+
+| Example | Class | Architectural Pattern & Real-World Use Case |
+| :--- | :--- | :--- |
+| **1. Spring Web Controller** | `SpringWebRoutingDemo` | Spring Boot / Quarkus REST gateway intent routing with active learning telemetry drift capture. |
+| **2. Kafka QoS Partitioning** | `KafkaStreamQoSDemo` | High-throughput streaming log triage (P0 Critical, P1 Warning, P3 Health) with zero allocations. |
+| **3. LLM Cost Reduction** | `LLMSemanticCacheDemo` | Resolves 80%+ of intents locally in ~30 μs ($0.00 cost), escalating genuine OOD queries to GPT-4o ($0.02). |
+| **4. FinTech Wire Audit** | `FinTechFraudGuardDemo` | Real-time remittance audit for scam wire blocking, chargeback dispute routing, and step-up 2FA. |
+| **5. WAF Security Inspector** | `SecurityWafInspectionDemo` | Inspects HTTP parameters to block SQL injection, path traversal (LFI), and command injection (RCE) in microseconds. |
+| **6. Edge IoT Actuator** | `IoTEdgeActuatorDemo` | Voice/text command routing for low-power smart home hubs with `filterTokens` 0 B/op zero-alloc execution. |
+| **7. Multi-Tenant Cascading** | `MultiTenantCascadingDemo` | Hierarchical neural routing: Tier-1 Organization Classifier -> Tier-2 Specialized Domain NeuroGate. |
+
+---
+
 ## Wire Format Specification (IBRN v2)
 
 IntelliBranch models are compiled into a compact, self-contained Little-Endian binary with a 32-byte SHA-256 integrity checksum:

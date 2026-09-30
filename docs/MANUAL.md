@@ -474,3 +474,21 @@ Inspects payment memos for social engineering, unauthorized charges, and high-va
 
 ### 7.4. Automated CI/CD Failure Triage & Self-Healing
 Parses tail build failure logs to trigger automated step retries, memory pod scale-ups, or build cache invalidation.
+
+---
+
+## 8. Enterprise Executable Example Gallery
+
+IntelliBranch-JAVA provides 7 standalone enterprise example suites in `src/main/java/com/intellibranch/examples`:
+
+| Example File | Key Classes & Methods | Target Architecture Pattern | Command Line Run |
+| :--- | :--- | :--- | :--- |
+| [`SpringWebRoutingDemo.java`](file:///c:/Users/sezzi/programming/IntelliBranch-JAVA/src/main/java/com/intellibranch/examples/SpringWebRoutingDemo.java) | `MockSpringRouterService.handleIncomingRequest` | Spring Boot / Quarkus REST gateway intent routing with telemetry drift monitoring. | `java -cp target/classes com.intellibranch.examples.ExampleGallery spring` |
+| [`KafkaStreamQoSDemo.java`](file:///c:/Users/sezzi/programming/IntelliBranch-JAVA/src/main/java/com/intellibranch/examples/KafkaStreamQoSDemo.java) | `NeuroGate.filter` | Apache Kafka / Pulsar stream consumer triage (P0 Critical, P1 Warning, P3 Metric). | `java -cp target/classes com.intellibranch.examples.ExampleGallery kafka` |
+| [`LLMSemanticCacheDemo.java`](file:///c:/Users/sezzi/programming/IntelliBranch-JAVA/src/main/java/com/intellibranch/examples/LLMSemanticCacheDemo.java) | `NeuroGate.bind`, `gate.fallback` | Resolves 80%+ intents locally in 30 μs ($0.00), safely escalating OOD to OpenAI ($0.02). | `java -cp target/classes com.intellibranch.examples.ExampleGallery llm` |
+| [`FinTechFraudGuardDemo.java`](file:///c:/Users/sezzi/programming/IntelliBranch-JAVA/src/main/java/com/intellibranch/examples/FinTechFraudGuardDemo.java) | `gate.bind("PhishingSuspicion")` | Real-time ACH/Fedwire memo audit, scam wire blocking, and step-up 2FA challenges. | `java -cp target/classes com.intellibranch.examples.ExampleGallery fintech` |
+| [`SecurityWafInspectionDemo.java`](file:///c:/Users/sezzi/programming/IntelliBranch-JAVA/src/main/java/com/intellibranch/examples/SecurityWafInspectionDemo.java) | `gate.bind("SQLInjection")` | WAF / API Gateway payload inspection blocking SQLi, LFI, and RCE in microseconds. | `java -cp target/classes com.intellibranch.examples.ExampleGallery waf` |
+| [`IoTEdgeActuatorDemo.java`](file:///c:/Users/sezzi/programming/IntelliBranch-JAVA/src/main/java/com/intellibranch/examples/IoTEdgeActuatorDemo.java) | `NeuroGate.filterTokens` | Embedded smart home hub command routing with strictly 0 B/op zero-alloc execution. | `java -cp target/classes com.intellibranch.examples.ExampleGallery iot` |
+| [`MultiTenantCascadingDemo.java`](file:///c:/Users/sezzi/programming/IntelliBranch-JAVA/src/main/java/com/intellibranch/examples/MultiTenantCascadingDemo.java) | `tier1Gate.bind(...) -> tier2Gate.filter(...)` | Hierarchical SaaS routing: Tier-1 Tenant Classifier -> Tier-2 Domain NeuroGate. | `java -cp target/classes com.intellibranch.examples.ExampleGallery multitenant` |
+| [`ExampleGallery.java`](file:///c:/Users/sezzi/programming/IntelliBranch-JAVA/src/main/java/com/intellibranch/examples/ExampleGallery.java) | `ExampleGallery.main` | Master runner executing all 7 enterprise scenarios and the 6-domain test suite. | `java -cp target/classes com.intellibranch.examples.ExampleGallery all` |
+
