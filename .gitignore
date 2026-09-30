@@ -1,3 +1,13 @@
+# Java & Build Output
+target/
+build/
+.gradle/
+out/
+*.class
+*.jar
+*.war
+*.ear
+
 # Compiled Binaries & Executables
 *.exe
 *.exe~
@@ -9,15 +19,15 @@ dist/
 
 # Compiled Model Weights
 weights/*.bin
+!weights/.gitkeep
 
-# Test binaries & coverage
-*.test
-*.out
-coverage.txt
-
-# OS & Editor metadata
-.DS_Store
+# IDE & Editor Metadata
 .idea/
+*.iml
 .vscode/
+.settings/
+.project
+.classpath
+.DS_Store
 *.swp
 *~
