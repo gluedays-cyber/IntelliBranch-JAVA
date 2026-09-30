@@ -1,0 +1,49 @@
+name: Java CI/CD Pipeline
+
+on:
+  push:
+    branches: [ "main" ]
+    tags: [ "v*" ]
+  pull_request:
+    branches: [ "main" ]
+
+permissions:
+  contents: write
+
+jobs:
+  build-and-test:
+    name: Build & Verify (Java ${{ matrix.java-version }})
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        java-version: [ 17, 21 ]
+
+    steps:
+      - name: Checkout Source Code
+        uses: actions/checkout@v4
+
+      - name: Set up JDK ${{ matrix.java-version }}
+        uses: actions/setup-java@v4
+        with:
+          java-version: ${{ matrix.java-version }}
+          distribution: 'temurin'
+          cache: 'maven'
+
+      - name: Compile and Test with Maven
+        run: mvn clean test --batch-mode
+
+      - name: Package JAR Artifact
+        run: mvn package -DskipTests --batch-mode
+
+      - name: Run Native Enterprise Verification
+        run: |
+          java -cp target/classes:target/test-classes com.intellibranch.AllTests
+          java -cp target/classes com.intellibranch.examples.ExampleGallery --verify
+
+      - name: Upload Build Artifacts
+        if: matrix.java-version == 17
+        uses: actions/upload-artifact@v4
+        with:
+          name: intellibranch-java-dist
+          path: target/*.jar
+          retention-days: 14

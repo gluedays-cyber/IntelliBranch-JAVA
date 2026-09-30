@@ -107,13 +107,13 @@ IntelliBranch-JAVA requires **zero runtime dependencies**. Include it in your Ma
 <dependency>
     <groupId>com.intellibranch</groupId>
     <artifactId>intellibranch</artifactId>
-    <version>2.0.0</version>
+    <version>3.0.0</version>
 </dependency>
 ```
 
 Or with Gradle (`build.gradle`):
 ```groovy
-implementation 'com.intellibranch:intellibranch:2.0.0'
+implementation 'com.intellibranch:intellibranch:3.0.0'
 ```
 
 ### 2. Basic Server Routing Example

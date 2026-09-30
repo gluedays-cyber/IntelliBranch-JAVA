@@ -395,7 +395,7 @@ IntelliBranch-JAVA utilizes `ThreadLocal<InferenceBuffer>` for scratch arrays. I
 For C# / .NET developers who need intelligent branching:
 1. **IKVM Compiler**: The pure Java JAR produced by IntelliBranch-JAVA can be converted directly into a native .NET DLL using [IKVM](https://github.com/ikvm-revived/ikvm):
    ```bash
-   ikvmc -target:library intellibranch-2.0.0.jar
+   ikvmc -target:library intellibranch-3.0.0.jar
    ```
 2. **Microservice Sidecar**: Run IntelliBranch-JAVA as an embedded gRPC or HTTP microservice responding in < 1 millisecond.
 
