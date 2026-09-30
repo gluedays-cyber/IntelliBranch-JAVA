@@ -8,11 +8,19 @@ if not exist "target\classes" (
     mkdir target\classes
 )
 
-javac -d target/classes -cp target/classes src\main\java\com\intellibranch\core\*.java src\main\java\com\intellibranch\routing\*.java src\main\java\com\intellibranch\neurogate\*.java src\main\java\com\intellibranch\training\*.java src\main\java\com\intellibranch\cli\*.java src\main\java\com\intellibranch\examples\*.java src\main\java\com\intellibranch\*.java
+powershell -Command "Get-ChildItem -Recurse -Path src/main/java/*.java | ForEach-Object { $_.FullName } | Out-File -Encoding ascii target/sources.txt"
+
+javac -d target/classes -cp target/classes @target/sources.txt
 
 if %ERRORLEVEL% NEQ 0 (
     echo [ERROR] Compilation failed.
     exit /b %ERRORLEVEL%
 )
 
-java -cp target/classes com.intellibranch.examples.ExampleGallery %*
+if "%1"=="mega" (
+    java -cp target/classes com.intellibranch.examples.enterprise.MegaGalleryRunner %2
+) else if "%1"=="verify" (
+    java -cp target/classes com.intellibranch.examples.enterprise.MegaGalleryRunner --verify
+) else (
+    java -cp target/classes com.intellibranch.examples.ExampleGallery %*
+)

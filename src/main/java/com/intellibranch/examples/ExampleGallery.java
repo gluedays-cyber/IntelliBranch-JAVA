@@ -48,6 +48,10 @@ public class ExampleGallery {
                 DemoRunner.main(new String[]{"--domain", "all"});
                 System.out.println();
             }
+            if ("all".equals(target) || "enterprise".equals(target) || "mega".equals(target) || "9".equals(target)) {
+                com.intellibranch.examples.enterprise.MegaGalleryRunner.runVerification();
+                System.out.println();
+            }
 
             System.out.println("================================================================================");
             System.out.println("  ALL ENTERPRISE EXAMPLES COMPLETED SUCCESSFULLY IN MICROSECONDS");

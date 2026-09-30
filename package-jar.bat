@@ -18,14 +18,13 @@ if %errorlevel% neq 0 (
     )
 )
 
-if not exist "target\classes\com\intellibranch\Main.class" (
-    echo [INFO] Compiling classes...
-    if not exist "target\classes" mkdir target\classes
-    javac -d target\classes -sourcepath src\main\java src\main\java\com\intellibranch\Main.java
-    if %errorlevel% neq 0 (
-        echo [ERROR] Compilation failed.
-        exit /b 1
-    )
+echo [INFO] Compiling classes...
+if not exist "target\classes" mkdir target\classes
+powershell -Command "Get-ChildItem -Recurse -Path src/main/java/*.java | ForEach-Object { $_.FullName } | Out-File -Encoding ascii target/sources.txt"
+javac -d target/classes -cp target/classes @target/sources.txt
+if %errorlevel% neq 0 (
+    echo [ERROR] Compilation failed.
+    exit /b 1
 )
 
 echo [INFO] Creating distribution JAR: target\intellibranch-3.0.0.jar ...

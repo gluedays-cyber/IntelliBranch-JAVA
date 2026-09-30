@@ -268,21 +268,48 @@ java -cp target/classes com.intellibranch.cli.DemoRunner --domain sre
 
 ## Enterprise Production Examples Gallery
 
-IntelliBranch-JAVA includes 7 dedicated, production-ready enterprise reference implementations located in `com.intellibranch.examples`:
+## Enterprise Practical Examples Suite (80+ Scenarios)
+
+IntelliBranch-JAVA ships with an exhaustive suite of **80+ enterprise production demonstration cases** indexed across 10 industry verticals under `com.intellibranch.examples.enterprise.*`, alongside the core architectural reference implementations in `com.intellibranch.examples`:
 
 ```bash
-# Run all enterprise examples
-java -cp target/classes com.intellibranch.examples.ExampleGallery all
+# Execute representative showcase across all 10 industry domains:
+java -cp target/classes com.intellibranch.examples.enterprise.MegaGalleryRunner
 
-# Or run specific targeted patterns:
-java -cp target/classes com.intellibranch.examples.ExampleGallery spring       # 1. Spring Boot Web Controller
-java -cp target/classes com.intellibranch.examples.ExampleGallery kafka        # 2. Kafka QoS Stream Partitioning
-java -cp target/classes com.intellibranch.examples.ExampleGallery llm          # 3. LLM Gateway & Cloud Bypass
-java -cp target/classes com.intellibranch.examples.ExampleGallery fintech      # 4. Wire Memo Scam Interception
-java -cp target/classes com.intellibranch.examples.ExampleGallery waf          # 5. WAF & API Security Inspector
-java -cp target/classes com.intellibranch.examples.ExampleGallery iot          # 6. Embedded IoT Zero-Alloc Actuator
-java -cp target/classes com.intellibranch.examples.ExampleGallery multitenant  # 7. Multi-Tenant Cascading Router
+# Verify and benchmark all 80 enterprise scenarios in a single run:
+java -cp target/classes com.intellibranch.examples.enterprise.MegaGalleryRunner --verify
+
+# List all 80 indexed scenarios:
+java -cp target/classes com.intellibranch.examples.enterprise.MegaGalleryRunner --list
+
+# Execute specific scenario by ID (e.g. Wire Transfer Fraud Guard or Prompt Injection Interceptor):
+java -cp target/classes com.intellibranch.examples.enterprise.MegaGalleryRunner E25
+java -cp target/classes com.intellibranch.examples.enterprise.MegaGalleryRunner E35
+
+# Filter and execute by industry domain (e.g. security, fintech, llm, iot):
+java -cp target/classes com.intellibranch.examples.enterprise.MegaGalleryRunner security
 ```
+
+### 10 Industry Domain Verticals (80 Production Scenarios)
+
+| Domain | Scenario Range | Production Use Cases & Routing Architecture |
+| :--- | :--- | :--- |
+| **1. Web & API Services** | `E01` – `E08` | REST API Intent Dispatcher, GraphQL Subgraph Router, HTTP Payload QoS Prioritizer, gRPC Stream Worker Dispatcher, Adaptive Rate-Limit Tiering, WebSocket Channel Router, Circuit Breaker Fallback, Dynamic Content-Negotiation Serializer. |
+| **2. Messaging & Streaming** | `E09` – `E16` | Kafka Partition Key Router (skew prevention), RabbitMQ Dead-Letter Reason Classifier, EDA Domain Event Fan-Out, CDC Debezium Mutation Stream Filter, Pulsar Hierarchical Topic Selector, 0 B/op Syslog Classifier, Prometheus Metric Pre-Filter, PagerDuty Alert Escalation. |
+| **3. Security & Compliance** | `E17` – `E24` | Zero-Latency SQLi Pre-Execution Guard, XSS Threat Classifier, JWT Role-Based Gateway Router, Adaptive MFA Step-Up Challenge, L7 DDoS Pattern Recognizer & Blackhole, API Scope Privilege Escalation Detector, Ransomware IoC Guard, Zero-Trust Architecture Posture Evaluator. |
+| **4. FinTech & Payments** | `E25` – `E32` | Real-Time Wire Transfer Anti-Fraud Guard, Chargeback & Dispute Risk Predictor, Crypto AML/CFT OFAC Sanctions Triage, HFT Ultra-Low Latency Order Router, Instant Micro-Loan Underwriting, Forex Arbitrage Spread Screener, Dynamic PSP Gateway Cost Router, VAT & Corporate Tax Audit Risk Screener. |
+| **5. LLM & Generative AI** | `E33` – `E40` | Semantic Cache Hit Resolver (local $0.00 bypass), Multi-LLM Cost & Tier Router (GPT-4o vs Claude Sonnet vs Gemini Flash), Prompt Injection & DAN Jailbreak Guard, RAG Multi-Index Vector Routing, AI Agent Tool Call Dispatcher, Hallucination Guardrail, Dynamic Token Budget Throttler, Multi-Turn Context Switch Detector. |
+| **6. IoT & Edge Computing** | `E41` – `E48` | Embedded Smart Home Voice Actuator, Industrial PLC & SCADA Vibration/Thermal Anomaly Router, Fleet Telematics & Geofence Guard, Wearable Patient Vital Signs ECG Triage, Smart Grid Peak Demand Balancer, Autonomous UAV Drone Collision Router, Smartwatch Fall Detection Classifier, Cold-Chain Vaccine Transport Excursion Guard. |
+| **7. Cloud Infrastructure & SRE** | `E49` – `E56` | Kubernetes HPA Proactive Scaling Dispatcher, OpenTelemetry Intelligent Trace Head Sampler, Incident Severity Triage (SEV1-SEV3), AWS Spot Instance 2-Minute Eviction Triage, Distributed Log Stream Anomaly Detector, Multi-Cloud Cross-Region GSLB Failover, SQL Read/Write Replica Intelligent Splitter, AWS Lambda Cold-Start Pre-Warm Dispatcher. |
+| **8. E-Commerce & Retail** | `E57` – `E64` | Buyer Intent Search Query Parser, Real-Time RecSys Filter (Cross-Sell / Up-Sell / Clearance), Supply Chain Stockout Guard, Support Ticket NLP Triage & Escalation, Dynamic Surge Pricing & Loyalty Discount Router, Last-Mile Courier Allocation Router, Automated Return & Fraud Screener, Flash Sale Virtual Waiting Room Bot Sieve. |
+| **9. Healthcare & BioInformatics** | `E65` – `E72` | Emergency Room Clinical Triage (ESI Level 1-5), Pharmacotherapy Drug-Drug Interaction Screener, EHR Clinical Note Specialty Classifier, PACS Radiology DICOM STAT Review Triage, ICU Telemetry False Alarm Suppressor, Next-Gen Sequencing Variant ACMG Triage, Telemedicine Doctor Router, Health Insurance Automated Claim Adjudication. |
+| **10. Gaming & Interactive Systems** | `E73` – `E80` | Competitive Esports Matchmaking & Region Router, Real-Time In-Game Chat Toxicity Filter, Anti-Cheat Aimbot & Memory Hook Guard, Dynamic RPG NPC Dialogue & Quest Branch Router, MMORPG Spatial Physics Sharding Router, Mobile Game IAP Piracy Guard, Global Leaderboard High-Score Anti-Tamper Filter, LiveOps Player Retention Quest Matcher. |
+
+---
+
+### Core Architectural Reference Implementations
+
+In addition to the 80 industry domain scenarios, IntelliBranch-JAVA includes 7 architectural reference implementations in `com.intellibranch.examples`:
 
 | Example | Class | Architectural Pattern & Real-World Use Case |
 | :--- | :--- | :--- |
