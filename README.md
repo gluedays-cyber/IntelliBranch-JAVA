@@ -1,5 +1,4 @@
 # IntelliBranch-JAVA
-<img src="https://github.com/user-attachments/assets/3413a486-d71c-4285-841d-76bbe74f830a" width="226" height="200" alt="Image" align="right" style="margin-left: 15px; margin: 10px;">
 <p align="center">
   <strong>Ultra-Low Latency Neural Conditional Branching & 3-Head Geometric NeuroGate Runtime in Pure Java</strong><br>
   <em>Directly creates, trains, and executes its own domain-specific neural network in pure Java 17+. Zero external dependencies, zero JNI, zero native bindings. Routes execution flow in ~30 μs with 0 B/op heap allocation on hot paths.</em>
