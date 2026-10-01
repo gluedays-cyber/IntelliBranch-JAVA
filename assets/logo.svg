@@ -1,0 +1,149 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 240" width="100%" height="240" fill="none">
+  <defs>
+    <!-- Background Gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a0d14"/>
+      <stop offset="50%" stop-color="#0f172a"/>
+      <stop offset="100%" stop-color="#07090e"/>
+    </linearGradient>
+
+    <!-- Border Gradient -->
+    <linearGradient id="borderGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE" stop-opacity="0.6"/>
+      <stop offset="50%" stop-color="#7F00FF" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#00F2FE" stop-opacity="0.1"/>
+    </linearGradient>
+
+    <!-- Neon Gradients -->
+    <linearGradient id="cyanPurple" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00F2FE"/>
+      <stop offset="100%" stop-color="#4FACFE"/>
+    </linearGradient>
+
+    <linearGradient id="violetPink" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#7F00FF"/>
+      <stop offset="100%" stop-color="#E100FF"/>
+    </linearGradient>
+
+    <linearGradient id="amberGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F59E0B"/>
+      <stop offset="100%" stop-color="#EF4444"/>
+    </linearGradient>
+
+    <linearGradient id="textGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#00F2FE"/>
+      <stop offset="60%" stop-color="#38BDF8"/>
+      <stop offset="100%" stop-color="#818CF8"/>
+    </linearGradient>
+
+    <!-- Glow Filter -->
+    <filter id="glowCyan" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="glowViolet" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="8" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+
+    <filter id="subtleGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feGaussianBlur stdDeviation="3" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Container Base with Subtle Tech Grid -->
+  <rect x="2" y="2" width="896" height="236" rx="16" fill="url(#bgGrad)" stroke="url(#borderGrad)" stroke-width="1.5"/>
+
+  <!-- Background Ambient Lights -->
+  <circle cx="120" cy="120" r="90" fill="#00F2FE" opacity="0.06" filter="url(#glowCyan)"/>
+  <circle cx="210" cy="80" r="70" fill="#7F00FF" opacity="0.05" filter="url(#glowViolet)"/>
+  <circle cx="820" cy="180" r="110" fill="#00F2FE" opacity="0.03" filter="url(#glowCyan)"/>
+
+  <!-- Subtle Grid Lines -->
+  <g stroke="#334155" stroke-opacity="0.15" stroke-width="1">
+    <line x1="30" y1="60" x2="870" y2="60"/>
+    <line x1="30" y1="120" x2="870" y2="120"/>
+    <line x1="30" y1="180" x2="870" y2="180"/>
+    <line x1="260" y1="20" x2="260" y2="220"/>
+  </g>
+
+  <!-- ==================== LOGO ICON: 3-HEAD GEOMETRIC NEUROGATE ==================== -->
+  <g transform="translate(135, 120)">
+    <!-- Outer Hexagonal Tech Orbit -->
+    <polygon points="0,-72 62,-36 62,36 0,72 -62,36 -62,-36" 
+             fill="none" stroke="#38BDF8" stroke-opacity="0.25" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+    <!-- Dynamic Branching Vector Paths -->
+    <!-- Input Flow Line (Left to Center) -->
+    <path d="M-95,0 L-35,0" stroke="#00F2FE" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="2,4" opacity="0.8"/>
+    <circle cx="-95" cy="0" r="3.5" fill="#00F2FE" filter="url(#subtleGlow)"/>
+
+    <!-- Central Neural Dispatch Node (Diamond Core) -->
+    <polygon points="0,-22 22,0 0,22 -22,0" fill="#0f172a" stroke="url(#cyanPurple)" stroke-width="3" filter="url(#subtleGlow)"/>
+    <polygon points="0,-12 12,0 0,12 -12,0" fill="url(#cyanPurple)"/>
+    <circle cx="0" cy="0" r="4" fill="#FFFFFF"/>
+
+    <!-- Branch Head 1: Definite Route (Upper Right, 45 deg) -->
+    <path d="M16,-16 L45,-45 L78,-45" fill="none" stroke="url(#cyanPurple)" stroke-width="2.8" stroke-linecap="round" filter="url(#subtleGlow)"/>
+    <circle cx="78" cy="-45" r="5" fill="#00F2FE"/>
+    <circle cx="78" cy="-45" r="9" fill="none" stroke="#00F2FE" stroke-width="1.2" opacity="0.6"/>
+
+    <!-- Branch Head 2: Pipeline Direct Route (Middle Right, 0 deg) -->
+    <path d="M22,0 L85,0" fill="none" stroke="url(#violetPink)" stroke-width="2.8" stroke-linecap="round" filter="url(#subtleGlow)"/>
+    <circle cx="85" cy="0" r="5" fill="#E100FF"/>
+    <circle cx="85" cy="0" r="9" fill="none" stroke="#E100FF" stroke-width="1.2" opacity="0.6"/>
+
+    <!-- Branch Head 3: Geometric Fallback / Isolation Route (Lower Right, -45 deg) -->
+    <path d="M16,16 L45,45 L78,45" fill="none" stroke="url(#amberGold)" stroke-width="2.8" stroke-linecap="round" filter="url(#subtleGlow)"/>
+    <circle cx="78" cy="45" r="5" fill="#F59E0B"/>
+    <circle cx="78" cy="45" r="9" fill="none" stroke="#F59E0B" stroke-width="1.2" opacity="0.6"/>
+
+    <!-- Gate Synchronizer Arcs -->
+    <path d="M55,-35 A55,55 0 0,1 60,35" fill="none" stroke="#64748B" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.5"/>
+  </g>
+
+  <!-- ==================== TYPOGRAPHY & BRANDING ==================== -->
+  <g transform="translate(290, 75)">
+    <!-- Brand Name -->
+    <text x="0" y="42" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif" font-size="44" font-weight="900" letter-spacing="1.5">
+      <tspan fill="#FFFFFF">INTELLI</tspan><tspan fill="url(#textGrad)">BRANCH</tspan>
+    </text>
+
+    <!-- Java Edition Badge -->
+    <g transform="translate(385, 8)">
+      <rect x="0" y="0" width="76" height="32" rx="6" fill="#F59E0B" fill-opacity="0.12" stroke="#F59E0B" stroke-opacity="0.6" stroke-width="1.2"/>
+      <text x="38" y="21" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif" font-size="14" font-weight="800" fill="#F59E0B" text-anchor="middle" letter-spacing="1.5">JAVA</text>
+    </g>
+
+    <!-- Version & Tagline -->
+    <text x="2" y="76" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, sans-serif" font-size="13" font-weight="600" fill="#94A3B8" letter-spacing="2.2">
+      NEURAL CONDITIONAL BRANCHING &amp; 3-HEAD GEOMETRIC NEUROGATE
+    </text>
+
+    <!-- Feature Pillars -->
+    <g transform="translate(2, 106)">
+      <!-- Pill 1: Latency -->
+      <g>
+        <circle cx="6" cy="-4" r="3" fill="#10B981"/>
+        <text x="16" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, monospace" font-size="11.5" font-weight="600" fill="#CBD5E1">~30 μs Latency</text>
+      </g>
+      <!-- Pill 2: Heap Allocation -->
+      <g transform="translate(130, 0)">
+        <circle cx="6" cy="-4" r="3" fill="#00F2FE"/>
+        <text x="16" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, monospace" font-size="11.5" font-weight="600" fill="#CBD5E1">0 B/op Allocation</text>
+      </g>
+      <!-- Pill 3: Dependencies -->
+      <g transform="translate(275, 0)">
+        <circle cx="6" cy="-4" r="3" fill="#818CF8"/>
+        <text x="16" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, monospace" font-size="11.5" font-weight="600" fill="#CBD5E1">Pure Java 17+ (Zero Dep)</text>
+      </g>
+      <!-- Pill 4: Format -->
+      <g transform="translate(450, 0)">
+        <circle cx="6" cy="-4" r="3" fill="#F59E0B"/>
+        <text x="16" y="0" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', 'Inter', Roboto, monospace" font-size="11.5" font-weight="600" fill="#CBD5E1">v2 Positional IBRN</text>
+      </g>
+    </g>
+  </g>
+</svg>
